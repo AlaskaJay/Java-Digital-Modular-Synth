@@ -14,13 +14,11 @@ public class ComponentTesting {
 		for(Byte i = 0; i < 10; i++)
 			sequence.offer((byte) (i+100));
 		
-		Component feed = new Component(new Component(new Component(new Sequencer(sequence, "squencer"), "between 1"), "between 2"), "feed");
+		Component feed = new Component(new Component(new Component(new Sequencer(sequence, "squencer"), "delay", 10), "between 2", 0), "feed");
 		
 		for(int i = 0; i < 100; i++) {
 			System.out.println(i +"," + feed.processData());
 		}
-		
-		
 	}
 
 }

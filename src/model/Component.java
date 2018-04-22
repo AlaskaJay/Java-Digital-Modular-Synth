@@ -7,7 +7,7 @@ public class Component {
 	protected Component previous;
 	protected String name;
 	protected int delay;
-	private Queue<Byte> data;
+	protected Queue<Byte> data;
 	
 	public Component() {
 		name = "blank";
