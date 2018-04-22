@@ -15,6 +15,12 @@ public class Component {
 		delay = 1;
 	}
 	
+	public Component(String name) {
+		this.name = name;
+		data = new LinkedList<Byte>();
+		delay = 1;
+	}
+	
 	public Component(Component previous) {
 		this.previous = previous;
 		name = "blank";
@@ -43,6 +49,10 @@ public class Component {
 		this.delay = delay;
 	}
 	
+	public void setPrevious(Component previous) {
+		this.previous = previous;
+	}
+	
 	public Queue<Byte> getData() {
 		return data;
 	}
@@ -56,6 +66,7 @@ public class Component {
 	}
 	
 	public Byte processData() {
+		System.out.println(name + " is processing data");
 		Byte hold = previous.processData();
 		if(hold != null) {
 			data.offer(hold);
